@@ -1,43 +1,28 @@
-# near-viewport
-### A jQuery selector to find elements near the viewport. [![Build Status](https://travis-ci.org/cobbdb/jsinclude.svg?branch=master)](https://travis-ci.org/cobbdb/jsinclude)
+# near-viewport [![Build Status](https://travis-ci.org/cobbdb/jsinclude.svg?branch=master)](https://travis-ci.org/cobbdb/jsinclude)
 
-A helga plugin to list and record IRC channel updates.
+A jQuery selector to find elements near the viewport.
 
-    $ pip install helga-contrib-updates
+    $ bower install jquery-near-viewport
 
-Syntax:
+-------------
+### Selecting visible elements
+By default the selector will match elements that are at least partially showing in the viewport.
 
-    helga updates [<nick>|#<channel>] [YYYY-MM-DD]
+    var visibleImages = $('img:near-viewport');
 
+### Using the offset option
+An offset can be set which will increase the range beyond the viewport both top and bottom.
+For example, if given an offset of 100, then items will match 100px above the viewport and 100px below the viewport.
 
-## Creating a new update
-
-New updates are created by adding ```Update:``` to the beginning of a message.
-```Update:``` is case-insensitive.
-
-    Update: This is important information.
-
-
-## Listing past updates
-
-The plugin will send you a private message with the list of updates for today.
-Optionally, you can ask for a specific date (see above) using a format YYYY-MM-DD.
-All update timestamps are stored in UTC.
-
-#### !updates
-Lists updates from everyone in the current channel.
-
-#### !updates #&lt;channel&gt;
-Lists updates from everyone in a specific channel.
-
-#### !updates &lt;nick&gt;
-Lists updates from a single person in the current channel.
-
-#### !updates YYYY-MM-DD
-Lists updates from specific date of the current channel.
-
-#### !updates (&lt;nick&gt;|#&lt;channel&gt;) YYYY-MM-DD
-Search for updates from a specific date for a single person or channel.
+    $('.ad:near-viewport(100)').loadFromServer();
 
 ---------
-License: MIT
+* See: http://plugins.jquery.com/near-viewport/
+* See: http://github.com/cobbdb/jquery-near-viewport
+* License: MIT
+---------
+## Change Log
+
+#### 1.0.0
+
+* Offset option to match above and below the viewport.
