@@ -10,6 +10,14 @@ By default the selector will match elements that are at least partially showing 
 
     var visibleImages = $('img:near-viewport');
 
+### Testing if an element is visible
+The selector can be used with .is() to test if an element is or is not in range of the viewport.
+
+    var trackingPixel = $('#lower-tp');
+    if (trackingPixel.is(':near-viewport')) {
+        trackingPixel.recordMetrics();
+    }
+
 ### Using the offset option
 An offset can be set which will increase the range beyond the viewport both top and bottom.
 For example, if given an offset of 100, then items will match 100px above the viewport and 100px below the viewport.
