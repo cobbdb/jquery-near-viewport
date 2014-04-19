@@ -1,6 +1,6 @@
 {
   "name": "jquery-near-viewport",
-  "main": "jquery-near-viewport.min.js",
+  "main": "dist/jquery-near-viewport.min.js",
   "authors": [
     "cobbdb <cobbdb@gmail.com>"
   ],

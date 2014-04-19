@@ -12,34 +12,40 @@ module.exports = function (grunt) {
                 trailing: true
             },
             default: {
-                src: ['src/*.js']
+                src: 'src/*.js'
             }
         },
         uglify: {
-            options: {
-                mangle: {
-                    except: [
-                        '$scope',
-                        '$index',
-                        '$event'
-                    ]
-                }
-            },
             default: {
-                src: ['src/*.js'],
+                src: 'src/*.js',
                 dest: 'dist/jquery-near-viewport.min.js'
+            }
+        },
+        jasmine: {
+            dist: {
+                src: 'dist/**/*.js'
+            },
+            raw: {
+                src: 'src/**/*.js'
+            },
+            options: {
+                specs: 'tests/*.spec.js',
+                vendor: 'node_modules/jquery/dist/jquery.min.js'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     grunt.registerTask('build', [
         'jshint',
         'uglify'
     ]);
-    grunt.registerTask('test', [
-        'build'
+
+    grunt.registerTask('default', [
+        'build',
+        'jasmine:dist'
     ]);
 };
