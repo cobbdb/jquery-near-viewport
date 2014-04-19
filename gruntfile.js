@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             },
             options: {
                 specs: 'tests/*.spec.js',
-                vendor: 'node_modules/jquery/dist/jquery.min.js'
+                vendor: require.resolve('jquery')
             }
         }
     });
