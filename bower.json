@@ -1,0 +1,26 @@
+{
+  "name": "jquery-near-viewport",
+  "main": "jquery-near-viewport.min.js",
+  "version": "1.0.0",
+  "authors": [
+    "cobbdb <cobbdb@gmail.com>"
+  ],
+  "description": "jQuery selector to find elements near the viewport.",
+  "keywords": [
+    "jquery",
+    "viewport",
+    "selector",
+    "offset",
+    "margin",
+    "infinite"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cobbdb/jquery-near-viewport.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

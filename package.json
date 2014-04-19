@@ -1,0 +1,32 @@
+{
+  "name": "jquery-near-viewport",
+  "version": "1.0.0",
+  "description": "jQuery selector to find elements near the viewport.",
+  "main": "jquery-near-viewport.min.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cobbdb/jquery-near-viewport.git"
+  },
+  "keywords": [
+    "jquery",
+    "viewport",
+    "selector",
+    "offset",
+    "margin",
+    "infinite"
+  ],
+  "author": "Dan Cobb <cobbdb@gmail.com> (http://www.github.com/cobbdb)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cobbdb/jquery-near-viewport/issues"
+  },
+  "homepage": "https://github.com/cobbdb/jquery-near-viewport",
+  "devDependencies": {
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.4",
+    "grunt-contrib-uglify": "~0.4.0"
+  }
+}
