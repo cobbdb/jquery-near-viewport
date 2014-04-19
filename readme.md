@@ -20,9 +20,8 @@ For example, if given an offset of 100, then items will match 100px above the vi
 * See: http://plugins.jquery.com/near-viewport/
 * See: http://github.com/cobbdb/jquery-near-viewport
 * License: MIT
+
 ---------
-## Change Log
-
+### Change Log
 #### 1.0.0
-
 * Offset option to match above and below the viewport.
