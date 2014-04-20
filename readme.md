@@ -1,4 +1,4 @@
-# near-viewport [![Build Status](https://travis-ci.org/cobbdb/jquery-near-viewport.svg?branch=master)](https://travis-ci.org/cobbdb/jquery-near-viewport)
+# near-viewport [![Build Status](https://travis-ci.org/cobbdb/jquery-near-viewport.svg?branch=master)](https://travis-ci.org/cobbdb/jquery-near-viewport) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 A jQuery selector to find elements near the viewport.
 
