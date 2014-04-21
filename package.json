@@ -1,7 +1,7 @@
 {
   "name": "jquery-near-viewport",
   "description": "jQuery selector to find elements near the viewport.",
-  "main": "dist/jquery-near-viewport.min.js",
+  "main": "src/jquery-near-viewport.js",
   "scripts": {
     "test": "grunt jasmine:dist"
   },
