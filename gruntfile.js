@@ -1,3 +1,5 @@
+var resolve = require('bower-path');
+
 module.exports = function (grunt) {
     grunt.initConfig({
         jshint: {
@@ -30,7 +32,7 @@ module.exports = function (grunt) {
             },
             options: {
                 specs: 'tests/*.spec.js',
-                vendor: require.resolve('jquery')
+                vendor: resolve('jquery')
             }
         }
     });

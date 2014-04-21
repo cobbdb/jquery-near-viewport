@@ -23,5 +23,8 @@
     "tests",
     "*.json",
     "gruntfile.js"
-  ]
+  ],
+  "devDependencies": {
+    "jquery": "1.x"
+  }
 }
