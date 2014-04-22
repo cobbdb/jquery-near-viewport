@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>:near-viewport by cobbdb</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>:near-viewport</h1>
+        <p>the jQuery selector to find things near the viewport</p>
+
+        <p class="view"><a href="https://github.com/cobbdb/jquery-near-viewport">View the Project on GitHub <small>cobbdb/jquery-near-viewport</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/cobbdb/jquery-near-viewport/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cobbdb/jquery-near-viewport/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cobbdb/jquery-near-viewport">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <pre><code>$ bower install jquery-near-viewport
+</code></pre>
+
+<hr><p><a href="https://travis-ci.org/cobbdb/jquery-near-viewport"><img src="https://travis-ci.org/cobbdb/jquery-near-viewport.svg?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/bo/jquery-near-viewport"><img src="https://badge.fury.io/bo/jquery-near-viewport.svg" alt="Bower version"></a> <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a></p>
+
+<h3>
+<a name="selecting-visible-elements" class="anchor" href="#selecting-visible-elements"><span class="octicon octicon-link"></span></a>Selecting visible elements</h3>
+
+<p>By default the selector will match elements that are at least partially showing in the viewport.</p>
+
+<pre><code>var visibleImages = $('img:near-viewport');
+</code></pre>
+
+<h3>
+<a name="testing-if-an-element-is-visible" class="anchor" href="#testing-if-an-element-is-visible"><span class="octicon octicon-link"></span></a>Testing if an element is visible</h3>
+
+<p>The selector can be used with .is() to test if an element is or is not in range of the viewport.</p>
+
+<pre><code>var trackingPixel = $('#lower-tp');
+if (trackingPixel.is(':near-viewport')) {
+    trackingPixel.recordMetrics();
+}
+</code></pre>
+
+<h3>
+<a name="using-the-offset-option" class="anchor" href="#using-the-offset-option"><span class="octicon octicon-link"></span></a>Using the offset option</h3>
+
+<p>An offset can be set which will increase the range beyond the viewport both top and bottom.
+For example, if given an offset of 100, then items will match 100px above the viewport and 100px below the viewport.</p>
+
+<pre><code>$('.ad:near-viewport(100)').loadFromServer();
+</code></pre>
+
+<hr><ul>
+<li>See: <a href="http://plugins.jquery.com/near-viewport/">http://plugins.jquery.com/near-viewport/</a>
+</li>
+<li>See: <a href="http://github.com/cobbdb/jquery-near-viewport">http://github.com/cobbdb/jquery-near-viewport</a>
+</li>
+<li>License: MIT</li>
+</ul><hr><h3>
+<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log</h3>
+
+<h4>
+<a name="100" class="anchor" href="#100"><span class="octicon octicon-link"></span></a>1.0.0</h4>
+
+<ul>
+<li>Offset option to match above and below the viewport.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cobbdb">cobbdb</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
