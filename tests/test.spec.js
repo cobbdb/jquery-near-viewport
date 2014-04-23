@@ -1,8 +1,9 @@
 describe("near-viewport", function () {
-    var elHeight, elTop, winHeight;
+    var elHeight, winHeight;
     var moveTo = function (top) {
-        $('#test').css({
-            'margin-top': top + 'px'
+        jQuery('#test').css({
+            'position': 'absolute',
+            'top': top + 'px'
         });
     };
 
@@ -10,7 +11,6 @@ describe("near-viewport", function () {
     $(function () {
         $('body').append('<div id="test">test div</div>');
         elHeight = $('#test').height();
-        elTop = $('#test').offset().top;
         winHeight = window.innerHeight;
     });
 
@@ -44,7 +44,7 @@ describe("near-viewport", function () {
     });
     it("matches partially visible elements above", function () {
         moveTo(-elHeight);
-        var set = $('#test:near-viewport');
+        var set = $('#test:near-viewport(1)');
         expect(set.length).toEqual(1);
     });
     it("matches partially visible elements below", function () {
@@ -53,11 +53,11 @@ describe("near-viewport", function () {
         expect(set.length).toEqual(1);
     });
     it("is pixel perfect above", function () {
-        moveTo(-elHeight - elTop);
+        moveTo(-elHeight);
         var set = $('#test:near-viewport');
         expect(set.length).toEqual(0);
 
-        moveTo(-elHeight - elTop);
+        moveTo(-elHeight);
         set = $('#test:near-viewport(1)');
         expect(set.length).toEqual(1);
     });
@@ -68,6 +68,16 @@ describe("near-viewport", function () {
 
         moveTo(winHeight);
         set = $('#test:near-viewport(1)');
+        expect(set.length).toEqual(1);
+    });
+    it('works with noConflict()', function () {
+        $.noConflict();
+        moveTo(winHeight);
+        set = jQuery('#test:near-viewport(0)');
+        expect(set.length).toEqual(0);
+
+        moveTo(winHeight);
+        set = jQuery('#test:near-viewport(1)');
         expect(set.length).toEqual(1);
     });
 });
