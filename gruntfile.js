@@ -33,7 +33,7 @@ module.exports = function (grunt) {
             options: {
                 specs: 'tests/*.spec.js',
                 vendor: resolve('jquery'),
-                outfile: '_SpecRunner.html',
+                outfile: 'tests/_SpecRunner.html',
                 keepRunner: true
             }
         },
