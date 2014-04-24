@@ -33,7 +33,7 @@ module.exports = function (grunt) {
             options: {
                 specs: 'tests/*.spec.js',
                 vendor: resolve('jquery'),
-                outfile: 'tests/_SpecRunner.html',
+                outfile: '_SpecRunner.html',
                 keepRunner: true
             }
         },
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     username: 'cobbdb',
-                    key: process.env.saucekey,
+                    key: 'c86f3048-b022-4a8c-9340-59f5adfa30ef',
 					urls: [
                         'http://127.0.0.1:9999/tests/_SpecRunner.html'
                     ],
@@ -70,17 +70,38 @@ module.exports = function (grunt) {
 					testname: "jasmine tests"
 				}
             }
-        }
+        },
+        connect: {
+            server: {
+                options: {
+                    base: '',
+                    port: 9999
+                }
+            }
+        },
+        watch: {}
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-saucelabs');
 
     grunt.registerTask('build', [
         'jshint',
         'uglify'
+    ]);
+
+    grunt.registerTask('sl-test', [
+        'connect',
+        'saucelabs-jasmine'
+    ]);
+
+    grunt.registerTask('dev-test', [
+        'connect',
+        'watch'
     ]);
 
     grunt.registerTask('default', [
