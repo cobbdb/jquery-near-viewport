@@ -4,7 +4,7 @@ A jQuery selector to find elements near the viewport.
 
     $ bower install jquery-near-viewport
 
-[![Saucelabs Test Status](https://saucelabs.com/browser-matrix/cobbdb.svg)](https://saucelabs.com/u/cobbdb)
+[![Saucelabs Test Status](https://saucelabs.com/browser-matrix/jquery-near-viewport.svg)](https://saucelabs.com/u/jquery-near-viewport)
 
 -------------
 ### Selecting visible elements

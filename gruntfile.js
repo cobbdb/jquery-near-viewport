@@ -33,15 +33,15 @@ module.exports = function (grunt) {
             options: {
                 specs: 'tests/*.spec.js',
                 vendor: resolve('jquery'),
-                outfile: '_SpecRunner.html',
+                outfile: 'tests/_SpecRunner.html',
                 keepRunner: true
             }
         },
         'saucelabs-jasmine': {
-            all: {
+            test: {
                 options: {
-                    username: 'cobbdb',
-                    key: 'c86f3048-b022-4a8c-9340-59f5adfa30ef',
+                    username: 'jquery-near-viewport',
+                    key: '0aee862c-6f1a-45db-8000-12fa2a17f4a4',
 					urls: [
                         'http://127.0.0.1:9999/tests/_SpecRunner.html'
                     ],
@@ -56,18 +56,11 @@ module.exports = function (grunt) {
                         browserName: 'googlechrome',
                         platform: 'XP'
                     }, {
-                        browserName: 'googlechrome',
-                        platform: 'linux'
-                    }, {
                         browserName: 'internet explorer',
                         platform: 'WIN8',
                         version: '10'
-                    }, {
-                        browserName: 'internet explorer',
-                        platform: 'VISTA',
-                        version: '9'
                     }],
-					testname: "jasmine tests"
+					testname: ":near-viewport tests"
 				}
             }
         },
