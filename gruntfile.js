@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                     username: 'jquery-near-viewport',
                     key: '0aee862c-6f1a-45db-8000-12fa2a17f4a4',
 					urls: [
-                        'http://127.0.0.1:9999/tests/_SpecRunner.html'
+                        'http://127.0.0.1:9999/_SpecRunner.html'
                     ],
 					tunnelTimeout: 5,
 					build: process.env.TRAVIS_JOB_ID,
@@ -60,14 +60,14 @@ module.exports = function (grunt) {
                         platform: 'WIN8',
                         version: '10'
                     }],
-					testname: ":near-viewport tests"
+					testname: "Travis CI Tests"
 				}
             }
         },
         connect: {
             server: {
                 options: {
-                    base: '',
+                    base: 'tests',
                     port: 9999
                 }
             }
