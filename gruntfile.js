@@ -33,7 +33,7 @@ module.exports = function (grunt) {
             options: {
                 specs: 'tests/*.spec.js',
                 vendor: resolve('jquery'),
-                outfile: 'tests/_SpecRunner.html',
+                outfile: '_SpecRunner.html',
                 keepRunner: true
             }
         },
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                     username: process.env.SAUCE_USERNAME,
                     key: process.env.SAUCE_ACCESS_KEY,
 					urls: [
-                        'http://127.0.0.1:9999/_SpecRunner.html'
+                        'http://127.0.0.1:9999/tests/_SpecRunner.html'
                     ],
 					tunnelTimeout: 5,
 					build: process.env.TRAVIS_JOB_ID,
@@ -60,14 +60,14 @@ module.exports = function (grunt) {
                         platform: 'WIN8',
                         version: '10'
                     }],
-					testname: "Travis CI Tests"
+					testname: ":near-viewport tests"
 				}
             }
         },
         connect: {
             server: {
                 options: {
-                    base: 'tests',
+                    base: '',
                     port: 9999
                 }
             }
