@@ -1,12 +1,16 @@
 language: node_js
 node_js:
-  - "0.10.x"
+- 0.10.x
 notifications:
   email: false
 before_install:
-  - npm install -g grunt-cli
-  - npm install -g bower
+- npm install -g grunt-cli
+- npm install -g bower
 install:
-  - npm install
-  - bower install
+- npm install
+- bower install
 script: grunt saucelabs-jasmine
+env:
+  global:
+  - secure: p9BtO/oH92rsYX3WMdG63xEKI2aoV5s0Wr+kjRVxLEsXvBsG65iihtXVfRckj7f0Ix2rXQ9MJgNgA12ZG308oA+TlyBIsVafbfHyKKD/JNwfcnDbtyAVp9G4rEs4ARoFTDEY/zCnun7LppTtKnUu9goGnscKkSljp3dkLKRpFnE=
+  - secure: qhROD8iQ3hMZkJW7ciepbgQxk2t2MhIuVWimYE2jHNN6scj+Lp4x++qiGiiRZt0qQop3s1Y+XHw0hn4vIj1wgODon/9oWVNMHUz+yCxqfhrA2ILGLAZ/ReR4kgjIIPgpmcBRLY951LFcZVcZzo8Tr42J+cuTP9ytxzlZSYWV7w4=

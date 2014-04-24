@@ -40,8 +40,8 @@ module.exports = function (grunt) {
         'saucelabs-jasmine': {
             test: {
                 options: {
-                    username: 'jquery-near-viewport',
-                    key: '0aee862c-6f1a-45db-8000-12fa2a17f4a4',
+                    username: process.env.SAUCE_USERNAME,
+                    key: process.env.SAUCE_ACCESS_KEY,
 					urls: [
                         'http://127.0.0.1:9999/_SpecRunner.html'
                     ],
