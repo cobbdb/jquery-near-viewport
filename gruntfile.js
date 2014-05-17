@@ -48,13 +48,13 @@ module.exports = function (grunt) {
                 options: {
                     username: process.env.SAUCE_USERNAME,
                     key: process.env.SAUCE_ACCESS_KEY,
-					urls: [
+                    urls: [
                         'http://127.0.0.1:9999/tests/_SpecRunner.html'
                     ],
-					tunnelTimeout: 5,
-					build: process.env.TRAVIS_JOB_ID,
-					concurrency: 3,
-					browsers: [{
+                    tunneled: false,
+                    build: process.env.TRAVIS_JOB_ID,
+                    concurrency: 3,
+                    browsers: [{
                         browserName: 'firefox',
                         version: '19',
                         platform: 'XP'
@@ -66,8 +66,8 @@ module.exports = function (grunt) {
                         platform: 'WIN8',
                         version: '10'
                     }],
-					testname: ":near-viewport tests"
-				}
+                    testname: ":near-viewport tests"
+                }
             }
         },
         connect: {
