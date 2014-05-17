@@ -32,7 +32,13 @@ module.exports = function (grunt) {
             },
             options: {
                 specs: 'tests/*.spec.js',
-                vendor: resolve('jquery'),
+                helpers: [
+                    'bower_components/jasmine-jsreporter-real/jasmine-jsreporter.js',
+                    'tests/saucelabs.helper.js'
+                ],
+                vendor: [
+                    resolve('jquery'),
+                ],
                 outfile: 'tests/_SpecRunner.html',
                 keepRunner: true
             }
@@ -75,28 +81,21 @@ module.exports = function (grunt) {
         watch: {}
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-saucelabs');
+    // Load in all the grunt NPM tasks.
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.registerTask('build', [
         'jshint',
         'uglify'
     ]);
-
     grunt.registerTask('sl-test', [
         'connect',
         'saucelabs-jasmine'
     ]);
-
     grunt.registerTask('dev-test', [
         'connect',
         'watch'
     ]);
-
     grunt.registerTask('default', [
         'build',
         'jasmine:dist'

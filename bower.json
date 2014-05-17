@@ -25,6 +25,7 @@
     "gruntfile.js"
   ],
   "devDependencies": {
-    "jquery": "1.x"
+    "jquery": "1.x",
+    "jasmine-jsreporter-real": "*"
   }
 }
