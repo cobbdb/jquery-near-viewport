@@ -11,7 +11,7 @@ describe("near-viewport", function () {
     $(function () {
         $('body').append('<div id="test">test div</div>');
         elHeight = $('#test').height();
-        winHeight = window.innerHeight;
+        winHeight = $(window).height();
     });
 
     // Run the tests.
@@ -44,7 +44,7 @@ describe("near-viewport", function () {
     });
     it("matches partially visible elements above", function () {
         moveTo(-elHeight);
-        var set = $('#test:near-viewport(1)');
+        var set = $('#test:near-viewport(3)');
         expect(set.length).toEqual(1);
     });
     it("matches partially visible elements below", function () {
@@ -52,22 +52,22 @@ describe("near-viewport", function () {
         var set = $('#test:near-viewport');
         expect(set.length).toEqual(1);
     });
-    it("is pixel perfect above", function () {
-        moveTo(-elHeight);
+    it("accurate within 2px above", function () {
+        moveTo(-elHeight - 1);
         var set = $('#test:near-viewport');
         expect(set.length).toEqual(0);
 
-        moveTo(-elHeight);
-        set = $('#test:near-viewport(1)');
+        moveTo(-elHeight - 1);
+        set = $('#test:near-viewport(2)');
         expect(set.length).toEqual(1);
     });
-    it("is pixel perfect below", function () {
-        moveTo(winHeight);
+    it("accurate within 2px below", function () {
+        moveTo(winHeight + 1);
         set = $('#test:near-viewport(0)');
         expect(set.length).toEqual(0);
 
-        moveTo(winHeight);
-        set = $('#test:near-viewport(1)');
+        moveTo(winHeight + 1);
+        set = $('#test:near-viewport(2)');
         expect(set.length).toEqual(1);
     });
     it('works with noConflict()', function () {
