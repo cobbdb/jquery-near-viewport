@@ -37,14 +37,14 @@ module.exports = function (grunt) {
                     'tests/saucelabs.helper.js'
                 ],
                 vendor: [
-                    resolve('jquery'),
+                    resolve('jquery')
                 ],
                 outfile: 'tests/_SpecRunner.html',
                 keepRunner: true
             }
         },
         'saucelabs-jasmine': {
-            test: {
+            all: {
                 options: {
                     username: process.env.SAUCE_USERNAME,
                     key: process.env.SAUCE_ACCESS_KEY,
@@ -54,18 +54,10 @@ module.exports = function (grunt) {
                     build: process.env.TRAVIS_JOB_ID,
                     concurrency: 3,
                     browsers: [{
-                        browserName: 'firefox',
-                        version: '19',
-                        platform: 'XP'
-                    }, {
                         browserName: 'googlechrome',
-                        platform: 'XP'
-                    }, {
-                        browserName: 'internet explorer',
-                        platform: 'WIN8',
-                        version: '10'
+                        platform: 'WIN7'
                     }],
-                    testname: ":near-viewport tests"
+                    testname: ':near-viewport'
                 }
             }
         },
@@ -83,10 +75,6 @@ module.exports = function (grunt) {
     // Load in all the grunt NPM tasks.
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-    grunt.registerTask('build', [
-        'jshint',
-        'uglify'
-    ]);
     grunt.registerTask('sl-test', [
         'connect',
         'saucelabs-jasmine'
@@ -96,7 +84,8 @@ module.exports = function (grunt) {
         'watch'
     ]);
     grunt.registerTask('default', [
-        'build',
+        'jshint',
+        'uglify',
         'jasmine:dist'
     ]);
 };
