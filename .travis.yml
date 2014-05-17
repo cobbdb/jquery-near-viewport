@@ -10,9 +10,9 @@ install:
 - npm install
 - bower install
 before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
+- curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
 script:
-  - grunt sl-test
+- grunt sl-test
 env:
   global:
   - secure: p9BtO/oH92rsYX3WMdG63xEKI2aoV5s0Wr+kjRVxLEsXvBsG65iihtXVfRckj7f0Ix2rXQ9MJgNgA12ZG308oA+TlyBIsVafbfHyKKD/JNwfcnDbtyAVp9G4rEs4ARoFTDEY/zCnun7LppTtKnUu9goGnscKkSljp3dkLKRpFnE=
