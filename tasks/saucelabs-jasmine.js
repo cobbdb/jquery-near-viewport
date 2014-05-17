@@ -35,14 +35,6 @@ var browsers = [{
 }, {
     browserName: 'internet explorer',
     platform: 'Windows XP',
-    version: '6'
-}, {
-    browserName: 'internet explorer',
-    platform: 'Windows XP',
-    version: '7'
-}, {
-    browserName: 'internet explorer',
-    platform: 'Windows XP',
     version: '8'
 }, {
     browserName: 'internet explorer',
@@ -92,6 +84,12 @@ var browsers = [{
     version: '7.0',
     deviceName: 'iPad',
     'device-orientation': 'portrait'
+}, {
+    browserName: 'ipad',
+    platform: 'OS X 10.8',
+    version: '6.1',
+    deviceName: 'iPad',
+    'device-orientation': 'landscape'
 }, {
     browserName: 'android',
     platform: 'Linux',
