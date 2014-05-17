@@ -77,6 +77,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('sl-test', [
         'connect',
+        'jasmine:dist',
         'saucelabs-jasmine'
     ]);
     grunt.registerTask('dev-test', [
