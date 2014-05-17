@@ -43,24 +43,6 @@ module.exports = function (grunt) {
                 keepRunner: true
             }
         },
-        'saucelabs-jasmine': {
-            all: {
-                options: {
-                    username: process.env.SAUCE_USERNAME,
-                    key: process.env.SAUCE_ACCESS_KEY,
-                    urls: [
-                        'http://127.0.0.1:9999/tests/_SpecRunner.html'
-                    ],
-                    build: process.env.TRAVIS_JOB_ID,
-                    concurrency: 3,
-                    browsers: [{
-                        browserName: 'googlechrome',
-                        platform: 'WIN7'
-                    }],
-                    testname: ':near-viewport'
-                }
-            }
-        },
         connect: {
             server: {
                 options: {
