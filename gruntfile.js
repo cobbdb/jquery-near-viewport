@@ -72,8 +72,9 @@ module.exports = function (grunt) {
         watch: {}
     });
 
-    // Load in all the grunt NPM tasks.
+    // Load in all the external tasks.
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    grunt.loadTasks('tasks');
 
     grunt.registerTask('sl-test', [
         'connect',
