@@ -51,7 +51,6 @@ module.exports = function (grunt) {
                     urls: [
                         'http://127.0.0.1:9999/tests/_SpecRunner.html'
                     ],
-                    tunneled: false,
                     build: process.env.TRAVIS_JOB_ID,
                     concurrency: 3,
                     browsers: [{

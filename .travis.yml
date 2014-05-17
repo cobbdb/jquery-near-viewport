@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 0.10
+- "0.10"
 notifications:
   email: false
 before_install:
@@ -11,8 +11,6 @@ install:
 - bower install
 script:
 - grunt sl-test
-addons:
-  sauce_connect: true
 env:
   global:
   - secure: p9BtO/oH92rsYX3WMdG63xEKI2aoV5s0Wr+kjRVxLEsXvBsG65iihtXVfRckj7f0Ix2rXQ9MJgNgA12ZG308oA+TlyBIsVafbfHyKKD/JNwfcnDbtyAVp9G4rEs4ARoFTDEY/zCnun7LppTtKnUu9goGnscKkSljp3dkLKRpFnE=
