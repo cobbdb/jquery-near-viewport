@@ -34,13 +34,15 @@ module.exports = function (grunt) {
                 specs: 'tests/*.spec.js',
                 helpers: [
                     'bower_components/jasmine-jsreporter-real/jasmine-jsreporter.js',
-                    'tests/saucelabs.helper.js'
+                    'tests/*.helper.js'
                 ],
                 vendor: [
                     resolve('jquery')
                 ],
                 outfile: 'tests/_SpecRunner.html',
-                keepRunner: true
+                keepRunner: true,
+                display: 'short',
+                summary: true
             }
         },
         connect: {

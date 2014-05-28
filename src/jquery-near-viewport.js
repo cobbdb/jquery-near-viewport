@@ -13,19 +13,12 @@ jQuery.expr[':']['near-viewport'] = function (el, i, meta) {
     var winBottom = winTop + winHeight;
 
     var rect = el.getBoundingClientRect();
+    if (rect.height === 0) {
+        // Skip hidden page elements.
+        return false;
+    }
     var elTop = rect.top + winTop - margin;
     var elBottom = rect.bottom + winTop + margin;
 
-    // Debug panel (removed during minification)
-    /*console.log('~~ Var dump:');
-    console.log('meta: ' + meta);
-    console.log('margin: ' + margin);
-    console.log('top: ' + elTop);
-    console.log('True top: ' + (elTop + margin));
-    console.log('bottom: ' + elBottom);
-    console.log('type of bottom: ' + typeof elBottom);
-    console.log('windowTop: ' + winTop);
-    console.log('windowHeight: ' + winHeight);
-    console.log('windowBottom: ' + winBottom);*/
     return elBottom > winTop && elTop < winBottom;
 };
