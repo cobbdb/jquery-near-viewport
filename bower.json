@@ -26,6 +26,6 @@
   ],
   "devDependencies": {
     "jquery": "1.x",
-    "jasmine-jsreporter-real": "*"
+    "jasmine-jsreporter-real": "c3c23df"
   }
 }

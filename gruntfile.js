@@ -1,76 +1,20 @@
-var resolve = require('bower-path');
-
 module.exports = function (grunt) {
-    grunt.initConfig({
-        jshint: {
-            options: {
-                curly: true,
-                eqeqeq: false,
-                indent: 4,
-                noarg: true,
-                nonew: false,
-                plusplus: true,
-                quotmark: false,
-                trailing: true
-            },
-            default: {
-                src: 'src/*.js'
-            }
-        },
-        uglify: {
-            default: {
-                src: 'src/*.js',
-                dest: 'dist/jquery-near-viewport.min.js'
-            }
-        },
-        jasmine: {
-            dist: {
-                src: 'dist/**/*.js'
-            },
-            raw: {
-                src: 'src/**/*.js'
-            },
-            options: {
-                specs: 'tests/*.spec.js',
-                helpers: [
-                    'bower_components/jasmine-jsreporter-real/jasmine-jsreporter.js',
-                    'tests/*.helper.js'
-                ],
-                vendor: [
-                    resolve('jquery')
-                ],
-                outfile: 'tests/_SpecRunner.html',
-                keepRunner: true,
-                display: 'short',
-                summary: true
-            }
-        },
-        connect: {
-            server: {
-                options: {
-                    base: '',
-                    port: 9999
-                }
-            }
-        },
-        watch: {}
-    });
-
     // Load in all the external tasks.
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('sl-test', [
+    grunt.registerTask('sl-test', 'SauceLabs test suite.', [
         'connect',
         'jasmine:dist',
         'saucelabs-jasmine'
     ]);
-    grunt.registerTask('dev-test', [
+    grunt.registerTask('dev-test', 'Run SpecRunner.html locally.', [
         'connect',
         'watch'
     ]);
-    grunt.registerTask('default', [
+    grunt.registerTask('default', 'Build suite.', [
         'jshint',
+        'jasmine:src',
         'uglify',
         'jasmine:dist'
     ]);
