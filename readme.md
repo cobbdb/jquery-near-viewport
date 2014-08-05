@@ -26,6 +26,14 @@ For example, if given an offset of 100, then items will match 100px above the vi
 
     $('.ad:near-viewport(100)').loadFromServer();
 
+### No jQuery, no problem
+Provided is also a global version that can be used in any project. Just use
+`dist/near-viewport.js` instead of the jQuery plugin.
+
+    var el = document.getElementById('mydiv');
+    var visible = nearViewport(el);
+    var nearby = nearViewport(el, 100);
+
 ---------
 * See: http://plugins.jquery.com/near-viewport/
 * See: http://github.com/cobbdb/jquery-near-viewport

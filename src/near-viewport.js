@@ -1,16 +1,8 @@
-/**
- * :near-viewport
- * the jQuery selector to find things near the viewport.
- * @author Dan Cobb
- * @license MIT
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Window.scrollY
- */
-jQuery.expr[':']['near-viewport'] = function (el, i, meta) {
-    var margin = parseInt(meta[3]) || 0;
-
+function nearViewport(el, margin) {
     var winTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     var winHeight = document.documentElement.clientHeight;
     var winBottom = winTop + winHeight;
+    margin = margin || 0;
 
     var rect = el.getBoundingClientRect();
     if (rect.height === 0) {
@@ -21,4 +13,4 @@ jQuery.expr[':']['near-viewport'] = function (el, i, meta) {
     var elBottom = rect.bottom + winTop + margin;
 
     return elBottom > winTop && elTop < winBottom;
-};
+}
