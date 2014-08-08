@@ -30,6 +30,7 @@ module.exports = function (grunt) {
                             passed: result.passed
                         }
                     }, function (error, response, body) {
+                        console.log('Result: %s', JSON.stringify(result));
                         if (error) {
                             callback(error);
                         } else if (response.statusCode !== 200) {
