@@ -9,6 +9,11 @@ module.exports = function (grunt) {
                 src: 'src/**/*.js'
             },
             options: {
+                polyfills: [
+                    'bower_components/json2/json2.js',
+                    resolve('polyfill-queryselector'),
+                    resolve('jasmine-polyfills')
+                ],
                 specs: 'tests/*.spec.js',
                 helpers: [
                     'bower_components/jasmine-jsreporter-real/jasmine-jsreporter.js',

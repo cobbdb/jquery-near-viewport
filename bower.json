@@ -26,6 +26,9 @@
   ],
   "devDependencies": {
     "jquery": "1.x",
-    "jasmine-jsreporter-real": "c3c23df"
+    "jasmine-jsreporter-real": "*",
+    "json2": "*",
+    "polyfill-queryselector": "~1.0.0",
+    "jasmine-polyfills": "~1.0.0"
   }
 }
