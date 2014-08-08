@@ -1,4 +1,3 @@
-var request = require('request');
 module.exports = function (grunt) {
     grunt.config.set('saucelabs-jasmine', {
         all: {
@@ -6,40 +5,12 @@ module.exports = function (grunt) {
                 username: process.env.SAUCE_USERNAME,
                 key: process.env.SAUCE_ACCESS_KEY,
                 urls: [
-                    'http://127.0.0.1:9999/tests/_SpecRunner.html'
+                    'http://127.0.0.1:9999/tests/_SpecRunner-fake.html'
                 ],
                 build: process.env.TRAVIS_JOB_ID,
                 concurrency: 3,
                 testname: ':near-viewport',
-                browsers: browsers,
-                onTestComplete: function (result, callback) {
-                    var user = process.env.SAUCE_USERNAME;
-                    var pass = process.env.SAUCE_ACCESS_KEY;
-                    request.put({
-                        url: [
-                            'https://saucelabs.com/rest/v1',
-                            user,
-                            'jobs',
-                            result.job_id
-                        ].join('/'),
-                        auth: {
-                            user: user,
-                            pass: pass
-                        },
-                        json: {
-                            passed: result.passed
-                        }
-                    }, function (error, response, body) {
-                        console.log('Result: %s', JSON.stringify(result));
-                        if (error) {
-                            callback(error);
-                        } else if (response.statusCode !== 200) {
-                            callback(new Error('Unexpected response status'));
-                        } else {
-                            callback(null, result.passed);
-                        }
-                    });
-                }
+                browsers: browsers
             }
         }
     });
