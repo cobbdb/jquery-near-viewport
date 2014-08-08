@@ -33,6 +33,6 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-saucelabs": "~8.2.0",
     "matchdep": "^0.3.0",
-    "request": "~2.39.0"
+    "request": "^2.40.0"
   }
 }
