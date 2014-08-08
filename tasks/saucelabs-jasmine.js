@@ -6,7 +6,7 @@ module.exports = function (grunt) {
                 username: process.env.SAUCE_USERNAME,
                 key: process.env.SAUCE_ACCESS_KEY,
                 urls: [
-                    'http://127.0.0.1:9999/tests/_SpecRunner-fake.html'
+                    'http://127.0.0.1:9999/tests/_SpecRunner.html'
                 ],
                 build: process.env.TRAVIS_JOB_ID,
                 concurrency: 3,
@@ -33,11 +33,15 @@ module.exports = function (grunt) {
                         if (error) {
                             callback(error);
                         } else if (response.statusCode !== 200) {
-                            callback(new Error('Unexpected response status'));
+                            callback(Error('Unexpected response status: ' + response.statusCode));
                         } else {
-                            callback(null, result.passed);
+                            if (result.passed) {
+                                callback(null, true);
+                            } else {
+                                console.log('Failed with result = %s', JSON.stringify(result));
+                                callback(null, false);
+                            }
                         }
-                        console.log('Result: %s', JSON.stringify(result));
                     });
                 }
             }
