@@ -67,23 +67,23 @@ describe('near-viewport', function () {
             expect(set.length).toEqual(1);
         });
     });
-    describe('skips hidden elements', function () {
+    describe('matches hidden elements', function () {
         beforeEach(function () {
             moveTo(0);
-            set = $('#test:near-viewport(0)');
+            set = $('#test:near-viewport(10)');
             expect(set.length).toEqual(1);
         });
-        it('skips display:none', function () {
+        it('using display:none', function () {
             $('#test').css({
                 display: 'none'
             });
-            set = $('#test:near-viewport(0)');
-            expect(set.length).toEqual(0);
+            set = $('#test:near-viewport(10)');
+            expect(set.length).toEqual(1);
         });
-        it('skips jQuery.hide()', function () {
+        it('using jQuery.hide()', function () {
             $('#test').hide();
-            set = $('#test:near-viewport(0)');
-            expect(set.length).toEqual(0);
+            set = $('#test:near-viewport(10)');
+            expect(set.length).toEqual(1);
         });
     });
     it('works with noConflict()', function () {

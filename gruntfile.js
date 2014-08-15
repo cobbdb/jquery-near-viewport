@@ -13,8 +13,8 @@ module.exports = function (grunt) {
         'watch'
     ]);
     grunt.registerTask('default', 'Build suite.', [
-        'jshint',
         'jasmine:src',
+        'jshint',
         'uglify',
         'jasmine:dist'
     ]);

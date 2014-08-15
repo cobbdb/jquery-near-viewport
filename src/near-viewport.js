@@ -5,10 +5,6 @@ function nearViewport(el, margin) {
     margin = margin || 0;
 
     var rect = el.getBoundingClientRect();
-    if (rect.height === 0) {
-        // Skip hidden page elements.
-        return false;
-    }
     var elTop = rect.top + winTop - margin;
     var elBottom = rect.bottom + winTop + margin;
 
