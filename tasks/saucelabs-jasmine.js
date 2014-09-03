@@ -10,7 +10,8 @@ module.exports = function (grunt) {
                 build: process.env.TRAVIS_JOB_ID,
                 concurrency: 3,
                 testname: ':near-viewport',
-                browsers: browsers
+                browsers: browsers,
+                throttled: 6
             }
         }
     });
