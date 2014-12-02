@@ -1,7 +1,7 @@
 {
     "name": "near-viewport",
     "title": "Near Viewport",
-    "version": "1.2.2",
+    "version": "1.2.4",
     "description": "jQuery selector to find elements near the viewport.",
     "keywords": [
         "jquery",
@@ -23,6 +23,7 @@
     ],
     "bugs": "https://github.com/cobbdb/jquery-near-viewport/issues",
     "homepage": "https://github.com/cobbdb/jquery-near-viewport",
+    "docs": "https://github.com/cobbdb/jquery-near-viewport#near-viewport---",
     "dependencies": {
         "jquery": "*"
     }
