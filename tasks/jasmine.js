@@ -1,23 +1,42 @@
-var resolve = require('bower-path');
+var $ = require('curb'),
+    resolve = require('bower-path');
+
 module.exports = function (grunt) {
     grunt.config.merge({
         jasmine: {
-            dist: {
-                src: 'dist/**/*.js'
+            global: {
+                src: 'dist/near-viewport.min.js',
+                options: {
+                    specs: 'tests/global/*.spec.js',
+                    vendor: [
+                        resolve('jquery')
+                    ],
+                    outfile: 'tests/_SpecRunner.global.html'
+                }
             },
-            src: {
-                src: 'src/**/*.js'
+            plugin: {
+                src: 'dist/jquery-near-viewport.min.js',
+                options: {
+                    specs: 'tests/plugin/*.spec.js',
+                    vendor: [
+                        resolve('jquery')
+                    ],
+                    outfile: 'tests/_SpecRunner.plugin.html'
+                }
+            },
+            module: {
+                src: $('bin/tests/%s.spec.js',
+                    grunt.option('spec') || '*'
+                ),
+                options: {
+                    outfile: 'tests/_SpecRunner.module.html'
+                }
             },
             options: {
-                specs: 'tests/*.spec.js',
                 helpers: [
-                    'bower_components/jasmine-jsreporter-real/jasmine-jsreporter.js',
-                    'tests/*.helper.js'
+                    resolve('jasmine-jsreporter-real'),
+                    'tests/saucelabs.helper.js'
                 ],
-                vendor: [
-                    resolve('jquery')
-                ],
-                outfile: 'tests/_SpecRunner.html',
                 keepRunner: true,
                 display: 'full',
                 summary: false

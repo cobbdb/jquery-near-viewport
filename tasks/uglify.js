@@ -2,19 +2,11 @@ module.exports = function (grunt) {
     grunt.config.merge({
         uglify: {
             plugin: {
-                src: 'src/*.js',
-                dest: 'dist/jquery-near-viewport.min.js',
-                options: {
-                    enclose: {},
-                    mangle: {
-                        except: [
-                            'jQuery'
-                        ]
-                    }
-                }
+                src: 'bin/jquery-near-viewport.js',
+                dest: 'dist/jquery-near-viewport.min.js'
             },
             global: {
-                src: 'src/near-viewport.js',
+                src: 'bin/near-viewport.js',
                 dest: 'dist/near-viewport.min.js'
             }
         }

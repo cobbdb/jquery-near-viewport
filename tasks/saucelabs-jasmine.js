@@ -5,7 +5,9 @@ module.exports = function (grunt) {
                 username: process.env.SAUCE_USERNAME,
                 key: process.env.SAUCE_ACCESS_KEY,
                 urls: [
-                    'http://127.0.0.1:9999/tests/_SpecRunner.html'
+                    'http://127.0.0.1:9999/tests/_SpecRunner.module.html',
+                    'http://127.0.0.1:9999/tests/_SpecRunner.plugin.html',
+                    'http://127.0.0.1:9999/tests/_SpecRunner.global.html'
                 ],
                 build: process.env.TRAVIS_JOB_ID,
                 concurrency: 3,

@@ -1,3 +1,11 @@
+var $ = require('jquery'),
+    jQuery = require('jquery'),
+    Help = require('./test.helper.js'),
+    moveTo = Help.moveTo;
+
+// Install the plugin.
+require('../src/plugin.js');
+
 describe('near-viewport', function () {
     var elHeight, winHeight, set;
 
@@ -87,14 +95,14 @@ describe('near-viewport', function () {
         });
     });
     it('works with noConflict()', function () {
-        $.noConflict();
+        var altQuery = $.noConflict();
         moveTo(winHeight);
-        set = jQuery('#test:near-viewport(0)');
+        set = altQuery('#test:near-viewport(0)');
         expect(set.length).toEqual(0);
 
         moveTo(winHeight);
-        set = jQuery('#test:near-viewport(1)');
+        set = altQuery('#test:near-viewport(1)');
         expect(set.length).toEqual(1);
-        $ = jQuery;
+        $ = altQuery;
     });
 });

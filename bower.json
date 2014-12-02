@@ -1,6 +1,6 @@
 {
   "name": "jquery-near-viewport",
-  "main": "src/jquery-near-viewport.js",
+  "main": "dist/jquery-near-viewport.js",
   "authors": [
     "cobbdb <cobbdb@gmail.com>"
   ],
@@ -25,7 +25,14 @@
     "gruntfile.js"
   ],
   "devDependencies": {
-    "jquery": "1.x",
-    "jasmine-jsreporter-real": "*"
+    "jasmine-jsreporter-real": "*",
+    "jquery": "1.x"
+  },
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "dependencies": {
+    "jquery": "*"
   }
 }
