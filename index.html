@@ -28,55 +28,90 @@
         </ul>
       </header>
       <section>
-        <p><a href="https://travis-ci.org/cobbdb/jquery-near-viewport"><img src="https://travis-ci.org/cobbdb/jquery-near-viewport.svg?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/bo/jquery-near-viewport"><img src="https://badge.fury.io/bo/jquery-near-viewport.svg" alt="Bower version"></a> <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a></p>
+        <h1>
+<a id="near-viewport---" class="anchor" href="#near-viewport---" aria-hidden="true"><span class="octicon octicon-link"></span></a>near-viewport <a href="https://travis-ci.org/cobbdb/jquery-near-viewport"><img src="https://travis-ci.org/cobbdb/jquery-near-viewport.svg?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/bo/jquery-near-viewport"><img src="https://badge.fury.io/bo/jquery-near-viewport.svg" alt="Bower version"></a> <a href="http://badge.fury.io/js/jquery-near-viewport"><img src="https://badge.fury.io/js/jquery-near-viewport.svg" alt="NPM version"></a>
+</h1>
+
+<p>A jQuery selector to find elements near the viewport.</p>
 
 <pre><code>$ bower install jquery-near-viewport
+$ npm install jquery-near-viewport
 </code></pre>
 
 <p><a href="https://saucelabs.com/u/query-near-viewport"><img src="https://saucelabs.com/browser-matrix/query-near-viewport.svg" alt="Saucelabs Test Status"></a></p>
 
-<hr><h3>
-<a name="selecting-visible-elements" class="anchor" href="#selecting-visible-elements"><span class="octicon octicon-link"></span></a>Selecting visible elements</h3>
+<hr>
+
+<h3>
+<a id="selecting-visible-elements" class="anchor" href="#selecting-visible-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Selecting visible elements</h3>
 
 <p>By default the selector will match elements that are at least partially showing in the viewport.</p>
 
-<pre><code>var visibleImages = $('img:near-viewport');
-</code></pre>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> visibleImages <span class="pl-k">=</span> $(<span class="pl-s1"><span class="pl-pds">'</span>img:near-viewport<span class="pl-pds">'</span></span>);</pre></div>
 
 <h3>
-<a name="testing-if-an-element-is-visible" class="anchor" href="#testing-if-an-element-is-visible"><span class="octicon octicon-link"></span></a>Testing if an element is visible</h3>
+<a id="testing-if-an-element-is-visible" class="anchor" href="#testing-if-an-element-is-visible" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing if an element is visible</h3>
 
 <p>The selector can be used with .is() to test if an element is or is not in range of the viewport.</p>
 
-<pre><code>var trackingPixel = $('#lower-tp');
-if (trackingPixel.is(':near-viewport')) {
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> trackingPixel <span class="pl-k">=</span> $(<span class="pl-s1"><span class="pl-pds">'</span>#lower-tp<span class="pl-pds">'</span></span>);
+<span class="pl-k">if</span> (trackingPixel.is(<span class="pl-s1"><span class="pl-pds">'</span>:near-viewport<span class="pl-pds">'</span></span>)) {
     trackingPixel.recordMetrics();
-}
-</code></pre>
+}</pre></div>
 
 <h3>
-<a name="using-the-offset-option" class="anchor" href="#using-the-offset-option"><span class="octicon octicon-link"></span></a>Using the offset option</h3>
+<a id="using-the-offset-option" class="anchor" href="#using-the-offset-option" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the offset option</h3>
 
 <p>An offset can be set which will increase the range beyond the viewport both top and bottom.
 For example, if given an offset of 100, then items will match 100px above the viewport and 100px below the viewport.</p>
 
-<pre><code>$('.ad:near-viewport(100)').loadFromServer();
-</code></pre>
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s1"><span class="pl-pds">'</span>.ad:near-viewport(100)<span class="pl-pds">'</span></span>).loadFromServer();</pre></div>
 
-<hr><ul>
+<h2>
+<a id="formats" class="anchor" href="#formats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formats</h2>
+
+<p>Near-Viewport is provided in three formats:
+as a jQuery selector,
+as a pure JavaScript global function,
+and as a Browserify/Node/CommonJS module.</p>
+
+<h4>
+<a id="jquery-selector" class="anchor" href="#jquery-selector" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery Selector</h4>
+
+<p>The selector will try to load itself into the global jQuery object.
+This means that the <code>dist/jquery-near-viewport.min.js</code> file should be
+loaded immediately after the main <code>jquery.min.js</code> library is loaded.</p>
+
+<h4>
+<a id="pure-js-global-function" class="anchor" href="#pure-js-global-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pure JS Global Function</h4>
+
+<p>The global version can be used in any project and has zero dependencies.
+Cross browser testing is done via SauceLabs (see chart above).
+Just use <code>dist/near-viewport.js</code> instead of the jQuery plugin.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> el <span class="pl-k">=</span> <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">'</span>mydiv<span class="pl-pds">'</span></span>),
+    visible <span class="pl-k">=</span> nearViewport(el),
+    nearby <span class="pl-k">=</span> nearViewport(el, <span class="pl-c1">100</span>);</pre></div>
+
+<h4>
+<a id="browserifycommonjs-module" class="anchor" href="#browserifycommonjs-module" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browserify/CommonJS Module</h4>
+
+<p>To build Near-Viewport with your Browserify bundle, just install with
+<code>npm install jquery-near-viewport</code> and then <code>require</code> it like usual.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> nearViewport <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>jquery-near-viewport<span class="pl-pds">'</span></span>),
+    el <span class="pl-k">=</span> <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">'</span>mydiv<span class="pl-pds">'</span></span>),
+    visible <span class="pl-k">=</span> nearViewport(el),
+    nearby <span class="pl-k">=</span> nearViewport(el, <span class="pl-c1">100</span>);</pre></div>
+
+<hr>
+
+<ul>
 <li>See: <a href="http://plugins.jquery.com/near-viewport/">http://plugins.jquery.com/near-viewport/</a>
 </li>
 <li>See: <a href="http://github.com/cobbdb/jquery-near-viewport">http://github.com/cobbdb/jquery-near-viewport</a>
 </li>
 <li>License: MIT</li>
-</ul><hr><h3>
-<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log</h3>
-
-<h4>
-<a name="100" class="anchor" href="#100"><span class="octicon octicon-link"></span></a>1.0.0</h4>
-
-<ul>
-<li>Offset option to match above and below the viewport.</li>
 </ul>
       </section>
       <footer>
