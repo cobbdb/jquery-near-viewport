@@ -16,11 +16,11 @@ function getWinTop() {
 }
 
 /**
- * ## nearViewport(el, margin)
+ * ## nearViewport(el, [margin])
  * @param {Element} el The DOM element to check.
- * @param {Number} [margin] Offset in pixels from
- * the top and bottom of the viewport to include when
- * checking for the element. Defaults to 0.
+ * @param {Number} [margin] Defaults to 0. Offset in
+ * pixels from the top and bottom of the viewport to
+ * include when checking for the element.
  * @return {Boolean} True if the element is near
  * the viewport.
  */
