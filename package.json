@@ -37,8 +37,8 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-saucelabs": "^8.3.1",
-    "jquery": "1.x",
+    "grunt-saucelabs": "^8.3.3",
+    "jquery": "^1.11.1",
     "matchdep": "^0.3.0"
   }
 }
