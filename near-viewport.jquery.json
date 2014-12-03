@@ -1,7 +1,7 @@
 {
     "name": "near-viewport",
     "title": "Near Viewport",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "jQuery selector to find elements near the viewport.",
     "keywords": [
         "jquery",

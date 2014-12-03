@@ -2,7 +2,7 @@
   "name": "jquery-near-viewport",
   "description": "jQuery selector to find elements near the viewport.",
   "main": "src/near-viewport.js",
-  "version": "1.2.2",
+  "version": "1.2.5",
   "scripts": {
     "test": "grunt test"
   },
