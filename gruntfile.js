@@ -5,7 +5,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('sl-test', 'SauceLabs test suite.', [
         'connect',
-        'default',
         'saucelabs-jasmine'
     ]);
     grunt.registerTask('dev-test', 'Run SpecRunner.html locally.', [
