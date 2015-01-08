@@ -14,7 +14,8 @@ module.exports = function (grunt) {
                 testname: ':near-viewport',
                 browsers: browsers,
                 throttled: 6,
-                maxRetries: 1,
+                maxRetries: 2,
+                maxPollRetries: 3,
                 pollInterval: 4000
             }
         }
