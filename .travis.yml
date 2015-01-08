@@ -12,7 +12,7 @@ install:
 script:
 - grunt
 # Don't run sauce tests on pull requests.
-- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && grunt sl-test || false'
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && grunt sl-test || true'
 env:
   global:
   - secure: oY8tfLwUYuBTIWhQdVyLpo9IF2f/1CgVNiaOcbuL8UyQiK863UZM2wpA3Znr3kgGJofRf2urSskcx9/y6SOHJI7bQblwyMQ+qMaPAXnZlX0KRys6s5SBsbp35juZbhtO9841QpmS9N1d8Wct25+EfchfJpQns+Spcg0jMXsw9DU=
