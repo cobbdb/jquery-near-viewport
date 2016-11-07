@@ -1,8 +1,3 @@
-/**
- * # :near-viewport
- * jQuery selector for the nearViewport function.
- * @see near-viewport.js
- */
 var jQuery = require('jquery'),
     nearViewport = require('./near-viewport.js');
 

@@ -1,38 +1,10 @@
-/**
- * # nearViewport()
- * Global function attached to the `window` object.
- */
+module.exports = function (el, offset) {
+    var vert, hori,
+        rect = el.getBoundingClientRect();
+    offset = offset || 0;
+    
+    vert = rect.bottom + offset > 0 && rect.top - offset < global.innerHeight;
+    hori = rect.right + offset > 0 && rect.left - offset < global.innerWidth;
 
-/**
- * ### getWinTop()
- * Cross-browser check for the the window's scroll top.
- * @return {Number}
- */
-function getWinTop() {
-    if (window.pageYOffset === undefined) {
-        return (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    }
-    return window.pageYOffset;
-}
-
-/**
- * ## nearViewport(el, [margin])
- * @param {Element} el The DOM element to check.
- * @param {Number} [margin] Defaults to 0. Offset in
- * pixels from the top and bottom of the viewport to
- * include when checking for the element.
- * @return {Boolean} True if the element is near
- * the viewport.
- */
-module.exports = function (el, margin) {
-    var winTop = getWinTop();
-    var winHeight = document.documentElement.clientHeight;
-    var winBottom = winTop + winHeight;
-    margin = margin || 0;
-
-    var rect = el.getBoundingClientRect();
-    var elTop = rect.top + winTop - margin;
-    var elBottom = rect.bottom + winTop + margin;
-
-    return elBottom > winTop && elTop < winBottom;
+    return vert && hori;
 };
